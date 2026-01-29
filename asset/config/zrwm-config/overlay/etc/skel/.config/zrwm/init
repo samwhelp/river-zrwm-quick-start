@@ -135,4 +135,4 @@ zrwm-msg rule-add -appid firefox -title "Picture-in-Picture" -float
 ## ## autostart
 ##
 
-~/.config/river/autostart &
+~/.config/zrwm/autostart &
