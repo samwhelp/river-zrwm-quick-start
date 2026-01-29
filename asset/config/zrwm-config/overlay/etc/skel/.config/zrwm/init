@@ -144,6 +144,16 @@ zrwm-msg bind $modkey,shift d setlayout deck
 zrwm-msg bind $modkey,shift u setlayout deck
 zrwm-msg bind $modkey z togglesticky
 
+
+
+
+
+
+
+##
+## ## Keybind / Audio
+##
+
 zrwm-msg bind none XF86AudioRaiseVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%+
 zrwm-msg bind none XF86AudioLowerVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%-
 zrwm-msg bind none XF86AudioMute spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
