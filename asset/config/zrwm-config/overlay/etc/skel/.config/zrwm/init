@@ -126,9 +126,15 @@ zrwm-msg bind $modkey l setmfact 0.05
 
 
 
+
+##
+## ## Keybind /  Window / toggle state
+##
+
 zrwm-msg bind super f togglefullscreen
 zrwm-msg bind super Escape togglefloating
 zrwm-msg bind $modkey w togglesplit
+zrwm-msg bind $modkey z togglesticky
 
 
 
@@ -142,10 +148,6 @@ zrwm-msg bind super,alt t setlayout split_tile
 
 zrwm-msg bind $modkey,shift d setlayout deck
 zrwm-msg bind $modkey,shift u setlayout deck
-zrwm-msg bind $modkey z togglesticky
-
-
-
 
 
 
@@ -172,6 +174,8 @@ zrwm-msg bind none XF86AudioNext spawn playerctl next
 ##
 
 #zrwm-msg bind $modkey d spawn fuzzel
+zrwm-msg bind alt,shift d spawn rofi -show drun
+zrwm-msg bind alt,shift r spawn rofi -show run
 
 
 
@@ -188,6 +192,19 @@ zrwm-msg bind alt,shift t spawn sakura
 zrwm-msg bind alt,ctrl t spawn kitty
 
 
+
+
+##
+## ## Keybind / Application / Fav
+##
+
+zrwm-msg bind alt,shift f spawn thunar
+zrwm-msg bind alt,shift g spawn pcmanfm
+zrwm-msg bind alt,shift e spawn mousepad
+zrwm-msg bind alt,shift b spawn firefox --new-tab about:blank
+zrwm-msg bind alt,shift e spawn mousepad
+zrwm-msg bind alt,shift v spawn pavucontrol
+zrwm-msg bind alt,shift n spawn kitty --class 'nmtui' --title 'Network Settings' nmtui
 
 
 ##
