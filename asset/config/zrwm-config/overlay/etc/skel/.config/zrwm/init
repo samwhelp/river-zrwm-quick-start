@@ -50,7 +50,18 @@ zrwm-msg bind-mouse $modkey right moveresize 2
 
 
 ##
-## ## tag
+## ## Keybind / System
+##
+
+zrwm-msg bind alt,shift x spawn wlogout
+zrwm-msg bind alt,ctrl x spawn pkill river
+zrwm-msg bind alt,shift c reload
+
+
+
+
+##
+## ## Keybind / Tag
 ##
 
 mod_tag_keybind () {
@@ -73,22 +84,62 @@ mod_tag_keybind 8
 
 
 
-zrwm-msg bind $modkey Return spawn foot tmux
-zrwm-msg bind $modkey d spawn fuzzel
-zrwm-msg bind $modkey q killwindow
-zrwm-msg bind $modkey j focusstack 1
-zrwm-msg bind $modkey k focusstack -1
+##
+## ## Keybind / Window
+##
+
+
+
+
+##
+## ## Keybind / Window / close
+##
+
+zrwm-msg bind super q killwindow
+
+
+
+
+##
+## ## Keybind / Window / focus
+##
+
+zrwm-msg bind super a focusstack -1
+zrwm-msg bind super s  focusstack 1
+
+
+
+
+
+##
+## ## Keybind / Window / control
+##
+
+
+
+
 zrwm-msg bind $modkey,shift j pushup
 zrwm-msg bind $modkey,shift k pushdown
-zrwm-msg bind $modkey w togglesplit
-zrwm-msg bind $modkey f togglefullscreen
-zrwm-msg bind $modkey s togglefloating
+
 zrwm-msg bind $modkey h setmfact -0.05
 zrwm-msg bind $modkey l setmfact 0.05
-zrwm-msg bind $modkey r reload
 
-zrwm-msg bind $modkey,shift w setlayout split_tile
-zrwm-msg bind $modkey,shift s setlayout float
+
+
+zrwm-msg bind super f togglefullscreen
+zrwm-msg bind super Escape togglefloating
+zrwm-msg bind $modkey w togglesplit
+
+
+
+
+##
+## ## Keybind / Layout
+##
+
+zrwm-msg bind super,alt f setlayout float
+zrwm-msg bind super,alt t setlayout split_tile
+
 zrwm-msg bind $modkey,shift d setlayout deck
 zrwm-msg bind $modkey,shift u setlayout deck
 zrwm-msg bind $modkey z togglesticky
@@ -107,9 +158,19 @@ zrwm-msg bind none XF86AudioNext spawn playerctl next
 
 
 ##
+## ## Keybind / Application / Launcher
+##
+
+#zrwm-msg bind $modkey d spawn fuzzel
+
+
+
+
+##
 ## ## Keybind / Application / Terminal
 ##
 
+#zrwm-msg bind $modkey Return spawn foot tmux
 zrwm-msg bind alt Return spawn xfce4-terminal
 zrwm-msg bind alt,shift a spawn xfce4-terminal
 zrwm-msg bind alt,ctrl a spawn foot
