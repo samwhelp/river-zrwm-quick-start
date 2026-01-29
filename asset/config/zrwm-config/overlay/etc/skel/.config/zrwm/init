@@ -1,16 +1,77 @@
 #!/usr/bin/env bash
 
+
+
+
 modkey="super"
 
-mod_tag_keybind() {
+
+
+
+##
+## ## Clear
+##
+
+zrwm-msg clear-rules
+zrwm-msg clear-binds
+
+
+
+
+##
+## ## Appearance
+##
+
+zrwm-msg borderpx 4
+zrwm-msg bordercolor 27233fff
+zrwm-msg focuscolor 742ffcff
+zrwm-msg setcursor Adwaita 24
+zrwm-msg setlayout 0
+
+
+
+
+##
+## ## Mousebind
+##
+
+zrwm-msg bind-mouse $modkey left moveresize 1
+zrwm-msg bind-mouse $modkey middle togglefloating 0
+zrwm-msg bind-mouse $modkey right moveresize 2
+
+
+
+
+##
+## ## Keybind
+##
+
+
+
+
+##
+## ## tag
+##
+
+mod_tag_keybind () {
 	zrwm-msg bind $modkey $(($1 + 1)) view $((1 << $1))
 	zrwm-msg bind $modkey,ctrl $(($1 + 1)) toggleview $((1 << $1))
 	zrwm-msg bind $modkey,shift $(($1 + 1)) tag $((1 << $1))
 	zrwm-msg bind $modkey,shift,ctrl $(($1 + 1)) toggletag $((1 << $1))
 }
 
-zrwm-msg clear-rules
-zrwm-msg clear-binds
+mod_tag_keybind 0
+mod_tag_keybind 1
+mod_tag_keybind 2
+mod_tag_keybind 3
+mod_tag_keybind 4
+mod_tag_keybind 5
+mod_tag_keybind 6
+mod_tag_keybind 7
+mod_tag_keybind 8
+
+
+
 zrwm-msg bind alt,shift a spawn xfce4-terminal
 zrwm-msg bind $modkey Return spawn foot tmux
 zrwm-msg bind $modkey d spawn fuzzel
@@ -41,28 +102,18 @@ zrwm-msg bind none XF86AudioPlay spawn playerctl play
 zrwm-msg bind none XF86AudioPause spawn playerctl pause
 zrwm-msg bind none XF86AudioPrev spawn playerctl previous
 zrwm-msg bind none XF86AudioNext spawn playerctl next
-mod_tag_keybind 0
-mod_tag_keybind 1
-mod_tag_keybind 2
-mod_tag_keybind 3
-mod_tag_keybind 4
-mod_tag_keybind 5
-mod_tag_keybind 6
-mod_tag_keybind 7
-mod_tag_keybind 8
-zrwm-msg bind-mouse $modkey left moveresize 1
-zrwm-msg bind-mouse $modkey middle togglefloating 0
-zrwm-msg bind-mouse $modkey right moveresize 2
+
+
+
+
+##
+## ## Rule
+##
 
 zrwm-msg rule-add -appid steam -float -inverse_title Steam
 zrwm-msg rule-add -appid xdg-desktop-portal-gtk -float
 zrwm-msg rule-add -appid "steam_app_" -float
 zrwm-msg rule-add -appid firefox -title "Picture-in-Picture" -float
-zrwm-msg borderpx 4
-zrwm-msg bordercolor 27233fff
-zrwm-msg focuscolor 742ffcff
-zrwm-msg setcursor Adwaita 24
-zrwm-msg setlayout 0
 
 
 
