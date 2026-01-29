@@ -217,9 +217,15 @@ zrwm-msg bind none XF86MonBrightnessUp spawn brightnessctl set 5%-
 ## ## Keybind / Audio
 ##
 
-zrwm-msg bind none XF86AudioRaiseVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%+
-zrwm-msg bind none XF86AudioLowerVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%-
-zrwm-msg bind none XF86AudioMute spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+zrwm-msg bind none XF86AudioMute spawn pamixer --toggle-mute
+zrwm-msg bind none XF86AudioRaiseVolume spawn pamixer -i 5
+zrwm-msg bind none XF86AudioLowerVolume spawn pamixer -d 5
+
+
+#zrwm-msg bind none XF86AudioRaiseVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%+
+#zrwm-msg bind none XF86AudioLowerVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%-
+#zrwm-msg bind none XF86AudioMute spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
 
 zrwm-msg bind none XF86AudioMedia spawn playerctl play-pause
 zrwm-msg bind none XF86AudioPlay spawn playerctl play
