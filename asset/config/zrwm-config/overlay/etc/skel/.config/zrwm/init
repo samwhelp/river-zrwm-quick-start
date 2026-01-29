@@ -1,10 +1,10 @@
 #!/usr/bin/sh
 modkey="super"
 TAGKEYS() {
-    zrwm-msg bind $modkey $(($1 + 1)) view $((1 << $1))
-    zrwm-msg bind $modkey,ctrl $(($1 + 1)) toggleview $((1 << $1))
-    zrwm-msg bind $modkey,shift $(($1 + 1)) tag $((1 << $1))
-    zrwm-msg bind $modkey,shift,ctrl $(($1 + 1)) toggletag $((1 << $1))
+	zrwm-msg bind $modkey $(($1 + 1)) view $((1 << $1))
+	zrwm-msg bind $modkey,ctrl $(($1 + 1)) toggleview $((1 << $1))
+	zrwm-msg bind $modkey,shift $(($1 + 1)) tag $((1 << $1))
+	zrwm-msg bind $modkey,shift,ctrl $(($1 + 1)) toggletag $((1 << $1))
 }
 zrwm-msg clear-rules
 zrwm-msg clear-binds
@@ -62,7 +62,10 @@ zrwm-msg setcursor Adwaita 24
 zrwm-msg setlayout 0
 
 
+
+
 ##
-## ## wallpaper
+## ## autostart
 ##
-~/.azotebg
+
+~/.config/river/autostart &
