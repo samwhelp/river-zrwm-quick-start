@@ -72,7 +72,7 @@ mod_tag_keybind 8
 
 
 
-zrwm-msg bind alt,shift a spawn xfce4-terminal
+
 zrwm-msg bind $modkey Return spawn foot tmux
 zrwm-msg bind $modkey d spawn fuzzel
 zrwm-msg bind $modkey q killwindow
@@ -102,6 +102,19 @@ zrwm-msg bind none XF86AudioPlay spawn playerctl play
 zrwm-msg bind none XF86AudioPause spawn playerctl pause
 zrwm-msg bind none XF86AudioPrev spawn playerctl previous
 zrwm-msg bind none XF86AudioNext spawn playerctl next
+
+
+
+
+##
+## ## Keybind / Application / Terminal
+##
+
+zrwm-msg bind alt Return spawn xfce4-terminal
+zrwm-msg bind alt,shift a spawn xfce4-terminal
+zrwm-msg bind alt,ctrl a spawn foot
+zrwm-msg bind alt,shift t spawn sakura
+zrwm-msg bind alt,ctrl t spawn kitty
 
 
 
