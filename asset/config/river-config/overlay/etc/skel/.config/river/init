@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+
+
+
+##
+## ## window manager
+##
+
+zrwm &
+
+
+
+
+##
+## ## autostart
+##
+
+~/.config/river/autostart &

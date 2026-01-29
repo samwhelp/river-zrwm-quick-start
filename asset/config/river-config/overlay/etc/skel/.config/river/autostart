@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+
+
+
+##
+## ## Desktop Background Image
+##
+
+#hyprpaper &
+#[ -x "${HOME}/.azotebg" ] && "${HOME}/.azotebg" &
+#wf-background &
+#pcmanfm-qt --desktop --daemon-mode &
+
+
+
+
+##
+## ## Polkit
+##
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+
+
+
+##
+## ## panel / waybar
+##
+
+#waybar &
+
+
+
+
+##
+## ## panel / wf-shell
+##
+
+#wf-panel &
+
+
+
+
+##
+## ## nm-applet
+##
+
+nm-applet &
+
+
+
+
+##
+## ## fcitx5
+##
+
+fcitx5 &
