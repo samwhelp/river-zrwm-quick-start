@@ -151,24 +151,6 @@ zrwm-msg bind $modkey,shift u setlayout deck
 
 
 
-
-##
-## ## Keybind / Audio
-##
-
-zrwm-msg bind none XF86AudioRaiseVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%+
-zrwm-msg bind none XF86AudioLowerVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%-
-zrwm-msg bind none XF86AudioMute spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-
-zrwm-msg bind none XF86AudioMedia spawn playerctl play-pause
-zrwm-msg bind none XF86AudioPlay spawn playerctl play
-zrwm-msg bind none XF86AudioPause spawn playerctl pause
-zrwm-msg bind none XF86AudioPrev spawn playerctl previous
-zrwm-msg bind none XF86AudioNext spawn playerctl next
-
-
-
-
 ##
 ## ## Keybind / Application / Launcher
 ##
@@ -205,6 +187,47 @@ zrwm-msg bind alt,shift b spawn firefox --new-tab about:blank
 zrwm-msg bind alt,shift e spawn mousepad
 zrwm-msg bind alt,shift v spawn pavucontrol
 zrwm-msg bind alt,shift n spawn kitty --class 'nmtui' --title 'Network Settings' nmtui
+
+
+
+
+##
+## ## Keybind / Screenshot
+##
+
+zrwm-msg bind none Print spawn xfce4-screenshooter --fullscreen
+zrwm-msg bind super Print spawn xfce4-screenshooter --window
+zrwm-msg bind ctrl Print spawn xfce4-screenshooter --region
+zrwm-msg bind alt Print spawn xfce4-screenshooter
+
+
+
+
+##
+## ## Keybind / Brightness
+##
+
+zrwm-msg bind none XF86MonBrightnessDown spawn brightnessctl set +5%
+zrwm-msg bind none XF86MonBrightnessUp spawn brightnessctl set 5%-
+
+
+
+
+##
+## ## Keybind / Audio
+##
+
+zrwm-msg bind none XF86AudioRaiseVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%+
+zrwm-msg bind none XF86AudioLowerVolume spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%-
+zrwm-msg bind none XF86AudioMute spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+zrwm-msg bind none XF86AudioMedia spawn playerctl play-pause
+zrwm-msg bind none XF86AudioPlay spawn playerctl play
+zrwm-msg bind none XF86AudioPause spawn playerctl pause
+zrwm-msg bind none XF86AudioPrev spawn playerctl previous
+zrwm-msg bind none XF86AudioNext spawn playerctl next
+
+
 
 
 ##
