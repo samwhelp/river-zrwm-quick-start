@@ -3,11 +3,6 @@
 
 
 
-modkey="super"
-
-
-
-
 ##
 ## ## Clear
 ##
@@ -35,9 +30,9 @@ zrwm-msg setlayout 0
 ## ## Mousebind
 ##
 
-zrwm-msg bind-mouse $modkey left moveresize 1
-zrwm-msg bind-mouse $modkey middle togglefloating 0
-zrwm-msg bind-mouse $modkey right moveresize 2
+zrwm-msg bind-mouse super left moveresize 1
+zrwm-msg bind-mouse super middle togglefloating 0
+zrwm-msg bind-mouse super right moveresize 2
 
 
 
@@ -65,10 +60,10 @@ zrwm-msg bind alt,shift c reload
 ##
 
 mod_tag_keybind () {
-	zrwm-msg bind $modkey $(($1 + 1)) view $((1 << $1))
-	zrwm-msg bind $modkey,ctrl $(($1 + 1)) toggleview $((1 << $1))
-	zrwm-msg bind $modkey,shift $(($1 + 1)) tag $((1 << $1))
-	zrwm-msg bind $modkey,shift,ctrl $(($1 + 1)) toggletag $((1 << $1))
+	zrwm-msg bind super $(($1 + 1)) view $((1 << $1))
+	zrwm-msg bind super,ctrl $(($1 + 1)) toggleview $((1 << $1))
+	zrwm-msg bind super,shift $(($1 + 1)) tag $((1 << $1))
+	zrwm-msg bind super,shift,ctrl $(($1 + 1)) toggletag $((1 << $1))
 }
 
 mod_tag_keybind 0
@@ -110,31 +105,33 @@ zrwm-msg bind super s  focusstack 1
 
 
 
+##
+## ## Keybind / Window / swap
+##
+
+zrwm-msg bind super grave pushup
+zrwm-msg bind super Tab pushdown
+
+
 
 ##
 ## ## Keybind / Window / control
 ##
 
-
-
-
-zrwm-msg bind $modkey,shift j pushup
-zrwm-msg bind $modkey,shift k pushdown
-
-zrwm-msg bind $modkey h setmfact -0.05
-zrwm-msg bind $modkey l setmfact 0.05
+zrwm-msg bind super h setmfact -0.05
+zrwm-msg bind super l setmfact 0.05
 
 
 
 
 ##
-## ## Keybind /  Window / toggle state
+## ## Keybind /  Window / toggle
 ##
 
 zrwm-msg bind super f togglefullscreen
 zrwm-msg bind super Escape togglefloating
-zrwm-msg bind $modkey w togglesplit
-zrwm-msg bind $modkey z togglesticky
+zrwm-msg bind super o togglesplit
+zrwm-msg bind super p togglesticky
 
 
 
@@ -146,17 +143,17 @@ zrwm-msg bind $modkey z togglesticky
 zrwm-msg bind super,alt f setlayout float
 zrwm-msg bind super,alt t setlayout split_tile
 
-zrwm-msg bind $modkey,shift d setlayout deck
-zrwm-msg bind $modkey,shift u setlayout deck
+zrwm-msg bind super,alt d setlayout deck
+zrwm-msg bind super,alt u setlayout deck
 
 
 
 
 ##
-## ## Keybind / Application / Launcher
+## ## Keybind / Application / LauncherF
 ##
 
-#zrwm-msg bind $modkey d spawn fuzzel
+#zrwm-msg bind super d spawn fuzzel
 zrwm-msg bind alt,shift d spawn rofi -show drun
 zrwm-msg bind alt,shift r spawn rofi -show run
 
@@ -167,7 +164,7 @@ zrwm-msg bind alt,shift r spawn rofi -show run
 ## ## Keybind / Application / Terminal
 ##
 
-#zrwm-msg bind $modkey Return spawn foot tmux
+#zrwm-msg bind super Return spawn foot tmux
 zrwm-msg bind alt Return spawn xfce4-terminal
 zrwm-msg bind alt,shift a spawn xfce4-terminal
 zrwm-msg bind alt,ctrl a spawn foot
