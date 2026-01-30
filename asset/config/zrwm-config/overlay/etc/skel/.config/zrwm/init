@@ -182,7 +182,6 @@ zrwm-msg bind alt,shift f spawn thunar
 zrwm-msg bind alt,shift g spawn pcmanfm
 zrwm-msg bind alt,shift e spawn mousepad
 zrwm-msg bind alt,shift b spawn firefox --new-tab about:blank
-zrwm-msg bind alt,shift e spawn mousepad
 zrwm-msg bind alt,shift v spawn pavucontrol
 zrwm-msg bind alt,shift n spawn kitty --class 'nmtui' --title 'Network Settings' nmtui
 
