@@ -18,8 +18,8 @@ zrwm-msg clear-binds
 ##
 
 zrwm-msg borderpx 4
-zrwm-msg bordercolor 27233fff
-zrwm-msg focuscolor 742ffcff
+zrwm-msg bordercolor 444444ff
+zrwm-msg focuscolor 8baa9bff
 zrwm-msg setcursor Adwaita 24
 zrwm-msg setlayout 0
 
