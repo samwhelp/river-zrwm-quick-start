@@ -150,7 +150,7 @@ zrwm-msg bind super,alt u setlayout deck
 
 
 ##
-## ## Keybind / Application / LauncherF
+## ## Keybind / Application / Launcher
 ##
 
 #zrwm-msg bind super d spawn fuzzel
